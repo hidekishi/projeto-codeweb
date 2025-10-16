@@ -1,6 +1,4 @@
-// Museu dos Memes - JavaScript
-
-// Dados dos memes para a galeria
+// Dados dos memes exibidos na galeria
 const memes = [
     {
         id: 1,
@@ -10,7 +8,7 @@ const memes = [
     },
     {
         id: 2,
-        name: "FUUUUU (Rage Guy)",
+        name: "FUUUUU",
         year: 2008,
         imageUrl: "https://i.kym-cdn.com/entries/icons/original/000/000/063/Rage.jpg"
     },
@@ -58,11 +56,11 @@ const memes = [
     },
 ];
 
-// Elementos do DOM
+// Referências de elementos do DOM
 let memeGrid;
 let counters;
 
-// Inicializar a aplicação
+// Inicialização principal da página
 document.addEventListener('DOMContentLoaded', function() {
     initializeElements();
     updateCounterTargets();
@@ -71,13 +69,13 @@ document.addEventListener('DOMContentLoaded', function() {
     setupSmoothScrolling();
 });
 
-// Inicializar elementos do DOM
+// Captura elementos usados frequentemente
 function initializeElements() {
     memeGrid = document.getElementById('memeGrid');
     counters = document.querySelectorAll('.counter');
 }
 
-// Atualizar contadores com dados reais
+// Define valores dos contadores dinamicamente
 function updateCounterTargets() {
     const counterElements = document.querySelectorAll('.counter');
     
@@ -94,7 +92,7 @@ function updateCounterTargets() {
     }
 }
 
-// Renderizar galeria de memes
+// Monta e insere os cards de memes na galeria
 function renderMemeGallery() {
     if (!memeGrid) return;
     
@@ -105,7 +103,7 @@ function renderMemeGallery() {
         memeGrid.appendChild(memeCard);
     });
     
-    // Animar entrada dos cards
+    // Anima a entrada dos cards
     setTimeout(() => {
         const cards = memeGrid.querySelectorAll('.meme-card');
         cards.forEach((card, index) => {
@@ -117,7 +115,7 @@ function renderMemeGallery() {
     }, 50);
 }
 
-// Criar card individual do meme
+// Cria um card de meme (HTML)
 function createMemeCard(meme, index) {
     const col = document.createElement('div');
     col.className = 'col-lg-4 col-md-6 mb-4';
@@ -156,14 +154,14 @@ function createMemeCard(meme, index) {
         </div>
     `;
     
-    // Adicionar evento de clique para modal (se você quiser implementar)
+    // Clique no card: exibir detalhes (placeholder)
     card.addEventListener('click', () => showMemeModal(meme));
     
     col.appendChild(card);
     return col;
 }
 
-// Configurar animação dos contadores
+// Observa os contadores e inicia a animação quando visíveis
 function setupCounterAnimation() {
     const observerOptions = {
         threshold: 0.5,
@@ -184,7 +182,7 @@ function setupCounterAnimation() {
     });
 }
 
-// Animar contador
+// Anima um contador numérico até o alvo
 function animateCounter(counter) {
     const target = parseInt(counter.getAttribute('data-target'));
     const increment = target / 100;
@@ -201,7 +199,7 @@ function animateCounter(counter) {
     }, 20);
 }
 
-// Configurar rolagem suave
+// Habilita rolagem suave para âncoras internas
 function setupSmoothScrolling() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
@@ -217,7 +215,7 @@ function setupSmoothScrolling() {
     });
 }
 
-// Função para rolar até seção
+// Rola até a seção informada
 function scrollToSection(sectionId) {
     const section = document.getElementById(sectionId);
     if (section) {
@@ -228,15 +226,15 @@ function scrollToSection(sectionId) {
     }
 }
 
-// Função de meme aleatório
+// Seleciona e destaca um meme aleatório
 function randomMeme() {
     const randomIndex = Math.floor(Math.random() * memes.length);
     const randomMeme = memes[randomIndex];
     
-    // Mostrar toast com informações do meme aleatório
+    // Notificação com o meme sorteado
     showToast(`Meme Aleatório: ${randomMeme.name}`, `Ano: ${randomMeme.year}`, 'info');
     
-    // Rolar até galeria e destacar o meme
+    // Vai até a galeria e destaca o meme (visualmente)
     setTimeout(() => {
         scrollToSection('gallery');
         highlightMeme(randomMeme.id);
@@ -245,13 +243,13 @@ function randomMeme() {
 
 
 
-// Função de curtir meme
+// Marca um meme como curtido (feedback visual + toast)
 function likeMeme(memeId) {
     const meme = memes.find(m => m.id === memeId);
     if (meme) {
         showToast('❤️ Curtido!', `Você curtiu o meme "${meme.name}"!`, 'success');
         
-        // Adicionar feedback visual
+    // Feedback visual no botão de coração
         const heartBtn = event.target.closest('button');
         heartBtn.classList.add('text-danger');
         heartBtn.innerHTML = '<i class="fas fa-heart"></i>';
@@ -262,7 +260,7 @@ function likeMeme(memeId) {
     }
 }
 
-// Compartilhar card individual do meme
+// Simula compartilhar um meme (toast)
 function shareMemeCard(memeId) {
     const meme = memes.find(m => m.id === memeId);
     if (meme) {
@@ -270,21 +268,21 @@ function shareMemeCard(memeId) {
     }
 }
 
-// Mostrar modal do meme (implementação básica)
+// Exibe detalhes do meme (placeholder de modal)
 function showMemeModal(meme) {
     // Você pode implementar um modal aqui para visualização detalhada
     console.log('Mostrando modal para:', meme);
 }
 
-// Destacar meme específico
+// Destaca visualmente um card de meme (placeholder)
 function highlightMeme(memeId) {
     // Isso pode destacar um card específico do meme
     console.log('Destacando meme:', memeId);
 }
 
-// Funções Utilitárias
+// Utilitários
 
-// Mostrar notificação toast
+// Cria e exibe uma notificação (Bootstrap Toast)
 function showToast(title, message, type = 'info') {
     const toastContainer = getOrCreateToastContainer();
     const toast = createToast(title, message, type);
@@ -300,7 +298,7 @@ function showToast(title, message, type = 'info') {
     });
 }
 
-// Obter ou criar container de toast
+// Obtém (ou cria) o container de toasts
 function getOrCreateToastContainer() {
     let container = document.getElementById('toast-container');
     if (!container) {
@@ -313,7 +311,7 @@ function getOrCreateToastContainer() {
     return container;
 }
 
-// Criar elemento toast
+// Monta o HTML de um toast Bootstrap
 function createToast(title, message, type) {
     const toast = document.createElement('div');
     toast.className = 'toast';
@@ -339,12 +337,12 @@ function createToast(title, message, type) {
     return toast;
 }
 
-// Copiar para área de transferência
+// Copia um texto para a área de transferência
 function copyToClipboard(text) {
     if (navigator.clipboard) {
         navigator.clipboard.writeText(text);
     } else {
-        // Fallback para navegadores antigos
+    // Alternativa para navegadores sem Clipboard API
         const textArea = document.createElement('textarea');
         textArea.value = text;
         document.body.appendChild(textArea);
@@ -354,7 +352,7 @@ function copyToClipboard(text) {
     }
 }
 
-// Otimização de performance: Carregamento lazy para imagens
+// Lazy-load de imagens com IntersectionObserver
 function setupLazyLoading() {
     const images = document.querySelectorAll('img[data-src]');
     const imageObserver = new IntersectionObserver((entries) => {
@@ -371,20 +369,18 @@ function setupLazyLoading() {
     images.forEach(img => imageObserver.observe(img));
 }
 
-// Inicializar carregamento lazy quando DOM estiver pronto
+// Inicia o lazy-load após o DOM estar pronto
 document.addEventListener('DOMContentLoaded', setupLazyLoading);
 
-// Exportar funções para uso global
+// Exporta funções globais usadas no HTML
 window.scrollToSection = scrollToSection;
 window.randomMeme = randomMeme;
 window.likeMeme = likeMeme;
 window.shareMemeCard = shareMemeCard;
 
-// ============================================================================
-// HALL DA FAMA - Funcionalidades específicas
-// ============================================================================
+// ===== Hall da Fama: comportamentos da página dedicada =====
 
-// Dados do pódio para o Hall da Fama
+// Dados do pódio (exemplo)
 const podiumData = [
     {
         position: 1,
@@ -409,19 +405,19 @@ const podiumData = [
     }
 ];
 
-// Detectar se estamos na página do Hall da Fama
+// Verifica se a URL/título indicam a página de Hall da Fama
 function isHallOfFamePage() {
     return window.location.pathname.includes('hall-da-fama') || 
            document.title.includes('Hall da Fama');
 }
 
-// Inicializar funcionalidades específicas do Hall da Fama
+// Inicia recursos exclusivos do Hall da Fama
 function initializeHallOfFame() {
     if (!isHallOfFamePage()) return;
     
     console.log('🏆 Hall da Fama carregado!');
     
-    // Adicionar efeitos especiais aos cards
+    // Efeito de entrada dos cards do pódio
     const podiumCards = document.querySelectorAll('.podium-card');
     podiumCards.forEach((card, index) => {
         // Delay na animação de entrada
@@ -435,9 +431,9 @@ function initializeHallOfFame() {
     setupHallInteractions();
 }
 
-// Configurar animações do Hall da Fama
+// Animações simples do Hall da Fama
 function setupHallAnimations() {
-    // Animação simples do troféu principal
+    // Efeito hover no ícone de troféu
     const trophyIcon = document.querySelector('.trophy-icon');
     if (trophyIcon) {
         trophyIcon.addEventListener('mouseover', function() {
@@ -450,19 +446,19 @@ function setupHallAnimations() {
     }
 }
 
-// Configurar interações do Hall da Fama
+// Interações dos cards do pódio
 function setupHallInteractions() {
     const podiumCards = document.querySelectorAll('.podium-card');
     
     podiumCards.forEach((card, index) => {
-        // Efeito de clique para mostrar detalhes
+    // Clique: exibe detalhes do meme
         card.addEventListener('click', function() {
             showMemeDetails(podiumData[index]);
         });
     });
 }
 
-// Mostrar detalhes do meme (modal simples)
+// Mostra detalhes do meme (alert simples)
 function showMemeDetails(memeData) {
     const message = `
 🏆 ${memeData.name}
@@ -475,24 +471,24 @@ Este é um dos memes mais lendários da história da internet!
     alert(message);
 }
 
-// Inicialização principal
+// Roteia inicialização conforme a página atual
 document.addEventListener('DOMContentLoaded', function() {
-    // Funcionalidades principais
+    // Comum às páginas
     initializeElements();
     updateCounterTargets();
     
-    // Funcionalidades específicas baseadas na página
+    // Específicas por página
     if (isHallOfFamePage()) {
         initializeHallOfFame();
     } else {
-        // Página principal do museu
+    // Página principal do museu
         renderMemeGallery();
         setupCounterAnimation();
         setupSmoothScrolling();
     }
 });
 
-// Função utilitária para logging
+// Log com tag da página atual
 function logEvent(event, data = {}) {
     const page = isHallOfFamePage() ? 'Hall da Fama' : 'Museu Principal';
     console.log(`🎭 ${page} - ${event}:`, data);

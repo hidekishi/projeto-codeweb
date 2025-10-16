@@ -1,6 +1,4 @@
-/* Custom CSS for Meme Museum */
-
-/* General Styles */
+/* Estilos gerais do site */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -9,7 +7,7 @@ body {
     background: linear-gradient(135deg, #6f42c1, #fd7e14);
 }
 
-/* Simple Animations */
+/* Animações simples */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -19,7 +17,7 @@ body {
     animation: fadeIn 1s ease-out;
 }
 
-/* Hero Section */
+/* Seção Hero */
 .hero-section {
     min-height: 70vh;
 }
@@ -33,7 +31,7 @@ body {
     min-height: 50vh;
 }
 
-/* Stats Section */
+/* Estatísticas */
 .stat-card {
     padding: 2rem;
     border-radius: 10px;
@@ -52,7 +50,7 @@ body {
     margin: 1rem 0;
 }
 
-/* Gallery Section */
+/* Galeria */
 .meme-card {
     border-radius: 10px;
     transition: transform 0.3s ease;
@@ -68,85 +66,14 @@ body {
     object-fit: cover;
 }
 
-/* Timeline Styles */
-.timeline {
-    position: relative;
-    margin: 2rem 0;
-}
-
-.timeline::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: #6f42c1;
-    transform: translateX(-50%);
-}
-
-.timeline-item {
-    position: relative;
-    margin: 2rem 0;
-    display: flex;
-    align-items: center;
-}
-
-.timeline-item:nth-child(odd) {
-    flex-direction: row-reverse;
-}
-
-.timeline-marker {
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #6f42c1;
-    z-index: 2;
-}
-
-.timeline-content {
-    width: 45%;
-    position: relative;
-}
-
-.timeline-item:nth-child(odd) .timeline-content {
-    padding-right: 1rem;
-}
-
-.timeline-item:nth-child(even) .timeline-content {
-    padding-left: 1rem;
-}
-
-/* Responsive */
+/* Responsivo */
 @media (max-width: 768px) {
     .hero-icon {
         font-size: 4rem;
     }
-    
-    .timeline::before {
-        left: 20px;
-    }
-    
-    .timeline-item {
-        flex-direction: row !important;
-        padding-left: 40px;
-    }
-    
-    .timeline-marker {
-        left: 20px;
-    }
-    
-    .timeline-content {
-        width: 100%;
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-    }
 }
 
-/* Basic styles */
+/* Ajustes básicos */
 html {
     scroll-behavior: smooth;
 }
