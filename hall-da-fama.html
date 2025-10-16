@@ -3,50 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hall da Fama - Museu dos Memes</title>
+    <title>Hall da Fama - Museu dos Memes Clássicos</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- CSS Principal -->
     <link rel="stylesheet" href="style.css">
-    <style>
-        .hall-hero {
-            background: linear-gradient(135deg, #6f42c1, #fd7e14);
-            min-height: 50vh;
-        }
-        
-        .trophy-icon {
-            font-size: 6rem;
-            color: #ffd700;
-        }
-        
-        .podium-card {
-            border-radius: 15px;
-            transition: transform 0.3s ease;
-        }
-        
-        .podium-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .rank-badge {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            color: white;
-        }
-        
-        .rank-1 { background: #ffd700; }
-        .rank-2 { background: #c0c0c0; }
-        .rank-3 { background: #cd7f32; }
-    </style>
+    <!-- CSS do Hall da Fama -->
+    <link rel="stylesheet" href="hall-da-fama.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -65,7 +30,7 @@
                 <div class="col-lg-8 mx-auto">
                     <i class="fas fa-trophy trophy-icon mb-4"></i>
                     <h1 class="display-4 fw-bold mb-4">Hall da Fama</h1>
-                    <p class="lead">Os memes mais lendários da história da internet</p>
+                    <p class="lead">Os memes mais lendários (2001-2013)</p>
                 </div>
             </div>
         </div>
@@ -75,7 +40,8 @@
     <section class="py-5 bg-light">
         <div class="container">
             <div class="text-center mb-5">
-                <h2 class="fw-bold">🏆 Top 3 Memes Lendários</h2>
+                <h2 class="fw-bold">🏆 Top 3 Clássicos</h2>
+                <p class="text-muted">Os memes mais lendários</p>
             </div>
             
             <div class="row justify-content-center">
@@ -83,11 +49,11 @@
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card podium-card shadow text-center">
                         <div class="rank-badge rank-1">1°</div>
-                        <img src="https://via.placeholder.com/300x200/FFD700/FFFFFF?text=Doge" class="card-img-top" alt="Doge" style="height: 200px; object-fit: cover;">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/9/9a/Trollface_non-free.png" class="card-img-top" alt="Trollface" style="height: 200px; object-fit: cover;">
                         <div class="card-body">
-                            <h5 class="card-title">Doge</h5>
-                            <p class="card-text">Much wow! Very meme!</p>
-                            <span class="badge bg-warning">👑 CAMPEÃO</span>
+                            <h5 class="card-title">Trollface</h5>
+                            <p class="card-text">O rei da trollagem</p>
+                            <span class="achievement-badge legendary">👑 LENDA ETERNA</span>
                         </div>
                     </div>
                 </div>
@@ -96,10 +62,11 @@
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card podium-card shadow text-center">
                         <div class="rank-badge rank-2">2°</div>
-                        <img src="https://via.placeholder.com/300x200/C0C0C0/FFFFFF?text=Grumpy+Cat" class="card-img-top" alt="Grumpy Cat" style="height: 200px; object-fit: cover;">
+                        <img src="https://i.kym-cdn.com/entries/icons/original/000/000/063/Rage.jpg" class="card-img-top" alt="FUUUU Rage Guy" style="height: 200px; object-fit: cover;">
                         <div class="card-body">
-                            <h5 class="card-title">Grumpy Cat</h5>
-                            <p class="card-text">A gata mais famosa da internet</p>
+                            <h5 class="card-title">FUUUU (Rage Guy)</h5>
+                            <p class="card-text">Pai dos rage comics</p>
+                            <span class="achievement-badge pioneer">🥈 PIONEIRO</span>
                         </div>
                     </div>
                 </div>
@@ -108,10 +75,11 @@
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card podium-card shadow text-center">
                         <div class="rank-badge rank-3">3°</div>
-                        <img src="https://via.placeholder.com/300x200/CD7F32/FFFFFF?text=Drake+Pointing" class="card-img-top" alt="Drake" style="height: 200px; object-fit: cover;">
+                        <img src="https://i.kym-cdn.com/entries/icons/original/000/000/305/Rickroll.jpg" class="card-img-top" alt="Rickroll" style="height: 200px; object-fit: cover;">
                         <div class="card-body">
-                            <h5 class="card-title">Drake Pointing</h5>
-                            <p class="card-text">Template universal</p>
+                            <h5 class="card-title">Rickroll</h5>
+                            <p class="card-text">Trote eterno</p>
+                            <span class="achievement-badge immortal">🥉 IMORTAL</span>
                         </div>
                     </div>
                 </div>
@@ -125,7 +93,7 @@
             <div class="text-center">
                 <p class="mb-0">
                     <i class="fas fa-trophy me-2"></i>
-                    Hall da Fama dos Memes
+                    Hall da Fama - Memes Clássicos
                 </p>
                 <a href="main.html" class="btn btn-outline-light btn-sm mt-2">
                     <i class="fas fa-arrow-left me-2"></i>Voltar ao Museu
@@ -136,5 +104,7 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JavaScript Unificado -->
+    <script src="script.js"></script>
 </body>
 </html>

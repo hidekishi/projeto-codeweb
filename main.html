@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Museu dos Memes - A História da Internet</title>
+    <title>Museu dos Memes Clássicos - A Era Dourada da Internet (2001-2013)</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome for icons -->
@@ -15,7 +15,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
         <div class="container">
             <a class="navbar-brand fw-bold" href="#">
-                <i class="fas fa-smile-wink me-2"></i>Museu dos Memes
+                <i class="fas fa-history me-2"></i>Memes Clássicos
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -27,9 +27,6 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#gallery">Galeria</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#timeline">Linha do Tempo</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="hall-da-fama.html">
@@ -47,11 +44,11 @@
             <div class="row align-items-center min-vh-50">
                 <div class="col-lg-6">
                     <h1 class="display-4 fw-bold mb-4 animate-fade-in">
-                        Bem-vindos ao Museu dos Memes!
+                        Museu dos Memes Clássicos!
                     </h1>
                     <p class="lead mb-4">
-                        Explore a fascinante história dos memes da internet, desde os primórdios até os virais de hoje. 
-                        Uma jornada divertida pela cultura digital que moldou gerações.
+                        Uma viagem nostálgica pelos memes que definiram a internet antiga. De 2001 a 2013, 
+                        reviva a era dourada dos rage comics, trollfaces e os primeiros virais da história digital.
                     </p>
                     <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
                         <button class="btn btn-warning btn-lg" onclick="scrollToSection('gallery')">
@@ -81,22 +78,22 @@
                 <div class="col-md-3 mb-4">
                     <div class="stat-card">
                         <i class="fas fa-images text-primary fs-1 mb-3"></i>
-                        <h3 class="counter" data-target="50">0</h3>
-                        <p class="text-muted">Memes Clássicos</p>
+                        <h3 class="counter" data-target="16">0</h3>
+                        <p class="text-muted">Memes Lendários</p>
                     </div>
                 </div>
                 <div class="col-md-3 mb-4">
                     <div class="stat-card">
                         <i class="fas fa-clock text-success fs-1 mb-3"></i>
-                        <h3 class="counter" data-target="25">0</h3>
+                        <h3 class="counter" data-target="12">0</h3>
                         <p class="text-muted">Anos de História</p>
                     </div>
                 </div>
                 <div class="col-md-3 mb-4">
                     <div class="stat-card">
-                        <i class="fas fa-users text-warning fs-1 mb-3"></i>
+                        <i class="fas fa-fire text-warning fs-1 mb-3"></i>
                         <h3 class="counter" data-target="1000">0</h3>
-                        <p class="text-muted">Visitantes por Dia</p>
+                        <p class="text-muted">Popularidade Total</p>
                     </div>
                 </div>
                 <div class="col-md-3 mb-4">
@@ -115,21 +112,8 @@
         <div class="container">
             <div class="row mb-5">
                 <div class="col-12 text-center">
-                    <h2 class="display-5 fw-bold mb-3">Galeria dos Memes Lendários</h2>
-                    <p class="lead text-muted">Uma coleção dos memes mais icônicos da internet</p>
-                </div>
-            </div>
-
-            <!-- Filter Buttons -->
-            <div class="row mb-4">
-                <div class="col-12 text-center">
-                    <div class="btn-group filter-buttons" role="group">
-                        <button type="button" class="btn btn-outline-primary active" data-filter="all">Todos</button>
-                        <button type="button" class="btn btn-outline-primary" data-filter="classic">Clássicos</button>
-                        <button type="button" class="btn btn-outline-primary" data-filter="modern">Modernos</button>
-                        <button type="button" class="btn btn-outline-primary" data-filter="viral">Virais</button>
-                        <button type="button" class="btn btn-outline-primary" data-filter="brasileiro">🇧🇷 Brasileiros</button>
-                    </div>
+                    <h2 class="display-5 fw-bold mb-3">Galeria dos Memes Clássicos</h2>
+                    <p class="lead text-muted">Uma coleção nostálgica dos memes que definiram a internet antiga (2001-2013)</p>
                 </div>
             </div>
 
@@ -140,95 +124,16 @@
         </div>
     </section>
 
-    <!-- Timeline Section -->
-    <section id="timeline" class="bg-light py-5">
-        <div class="container">
-            <div class="row mb-5">
-                <div class="col-12 text-center">
-                    <h2 class="display-5 fw-bold mb-3">Linha do Tempo dos Memes</h2>
-                    <p class="lead text-muted">A evolução dos memes através dos anos</p>
-                </div>
-            </div>
-
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-marker bg-primary"></div>
-                    <div class="timeline-content">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">2000-2005: A Era Primitiva</h5>
-                                <p class="card-text">Os primeiros memes começaram com imagens simples e texto básico. "All Your Base Are Belong To Us" foi um dos pioneiros.</p>
-                                <small class="text-muted">Era dos Fóruns</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-marker bg-success"></div>
-                    <div class="timeline-content">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">2006-2010: Nascimento dos Clássicos</h5>
-                                <p class="card-text">Surgimento do "Rage Guy", "Trollface" e outros memes que definiram uma geração. O YouTube impulsionou os memes em vídeo.</p>
-                                <small class="text-muted">Era do YouTube</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-marker bg-warning"></div>
-                    <div class="timeline-content">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">2011-2015: A Explosão Social</h5>
-                                <p class="card-text">"Grumpy Cat", "Doge" e "Distracted Boyfriend" dominaram as redes sociais. Facebook e Twitter se tornaram berços de memes.</p>
-                                <small class="text-muted">Era das Redes Sociais</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-marker bg-danger"></div>
-                    <div class="timeline-content">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">2016-Presente: A Era Moderna</h5>
-                                <p class="card-text">TikTok revolucionou os memes com vídeos curtos. "This is Fine", "Woman Yelling at Cat" e memes de reação dominam.</p>
-                                <small class="text-muted">Era do TikTok</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-marker bg-success"></div>
-                    <div class="timeline-content">
-                        <div class="card border-success">
-                            <div class="card-body">
-                                <h5 class="card-title">🇧🇷 2014-Presente: A Era Brasileira</h5>
-                                <p class="card-text">O Brasil conquistou seu espaço no mundo dos memes com "Nazaré Confusa", "Gretchen Shoqued", "Faustão Errou Rude" e "Dollynho". Memes tupiniquins ganharam reconhecimento internacional!</p>
-                                <small class="text-muted">Era Brasileira dos Memes</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer class="bg-dark text-white py-4">
         <div class="container">
             <div class="text-center">
                 <p class="mb-2">
-                    <i class="fas fa-smile-wink me-2"></i>
-                    <strong>Museu dos Memes</strong> - Preservando a história digital
+                    <i class="fas fa-history me-2"></i>
+                    <strong>Museu dos Memes Clássicos</strong> - Preservando a nostalgia digital
                 </p>
                 <p class="mb-0 text-white-50">
-                    &copy; 2025 Feito com <i class="fas fa-heart text-danger"></i> para os amantes de memes
+                    &copy; 2025 Feito com <i class="fas fa-heart text-danger"></i> para os veteranos da internet
                 </p>
             </div>
         </div>

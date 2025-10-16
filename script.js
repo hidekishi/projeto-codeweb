@@ -1,242 +1,111 @@
-// Meme Museum JavaScript
+// Museu dos Memes - JavaScript
 
-// Meme data for the gallery
+// Dados dos memes para a galeria
 const memes = [
     {
         id: 1,
-        name: "Distracted Boyfriend",
-        category: "viral",
-        year: 2017,
-        description: "O meme do namorado distraído se tornou um símbolo de escolhas difíceis.",
-        imageUrl: "https://media.wired.com/photos/59a459d3b345f64511c5e3d4/16:9/w_2494,h_1403,c_limit/MemeLoveTriangle_297886754.jpg",
-        popularity: 95
+        name: "Rickroll",
+        year: 2007,
+        imageUrl: "https://www.todayifoundout.com/wp-content/uploads/2017/11/rick-astley.png"
     },
     {
         id: 2,
-        name: "Grumpy Cat",
-        category: "classic",
-        year: 2012,
-        description: "Tardar Sauce, conhecida como Grumpy Cat, conquistou a internet com sua expressão permanentemente irritada.",
-        imageUrl: "https://ichef.bbci.co.uk/ace/standard/1024/cpsprodpb/26AC/production/_107000990_grumpycat5.jpg",
-        popularity: 98
+        name: "FUUUUU (Rage Guy)",
+        year: 2008,
+        imageUrl: "https://i.kym-cdn.com/entries/icons/original/000/000/063/Rage.jpg"
     },
     {
         id: 3,
-        name: "Doge",
-        category: "classic",
-        year: 2013,
-        description: "Much wow! O Shiba Inu que inspirou uma criptomoeda e milhões de memes.",
-        imageUrl: "https://istoedinheiro.com.br/wp-content/uploads/sites/17/2024/05/kabosu-doge.jpg",
-        popularity: 92
+        name: "Trollface",
+        year: 2008,
+        imageUrl: "https://m.media-amazon.com/images/I/61s0CU9bmGL.jpg_BO30,255,255,255_UF900,850_SR1910,1000,0,C_QL100_.jpg"
     },
     {
         id: 4,
-        name: "This Is Fine",
-        category: "modern",
-        year: 2016,
-        description: "O cão em uma sala pegando fogo representa perfeitamente como lidamos com crises.",
-        imageUrl: "https://miro.medium.com/0*ZjYSm_q36J4KChdn",
-        popularity: 89
+        name: "Poker Face",
+        year: 2009,
+        imageUrl: "https://ih1.redbubble.net/image.652250735.0700/bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.u2.jpg"
     },
     {
         id: 5,
-        name: "Drake Pointing",
-        category: "viral",
-        year: 2015,
-        description: "Drake rejeitando uma coisa e aprovando outra virou template universal de preferências.",
-        imageUrl: "https://notesfromachair.com/wp-content/uploads/2024/03/0_jdp3i0c4ojnwyfbl.jpg",
-        popularity: 94
+        name: "Forever Alone",
+        year: 2010,
+        imageUrl: "https://i.kym-cdn.com/entries/icons/original/000/003/619/ForeverAlone.jpg"
     },
     {
         id: 6,
-        name: "Woman Yelling at Cat",
-        category: "viral",
-        year: 2019,
-        description: "A combinação perfeita de drama humano e indiferença felina.",
-        imageUrl: "https://upload.wikimedia.org/wikipedia/en/1/1f/WomanYellingAtACat_meme.jpg",
-        popularity: 91
+        name: "Me Gusta",
+        year: 2010,
+        imageUrl: "https://ih1.redbubble.net/image.651876224.0374/flat,750x,075,f-pad,750x1000,f8f8f8.u3.jpg"
     },
     {
         id: 7,
-        name: "Pepe the Frog",
-        category: "classic",
-        year: 2008,
-        description: "Feels good man! O sapo que se tornou um fenômeno cultural global.",
-        imageUrl: "https://via.placeholder.com/400x300/00B894/FFFFFF?text=Pepe+Frog",
-        popularity: 87
+        name: "Bad Luck Brian",
+        year: 2012,
+        imageUrl: "https://f8n-ipfs-production.imgix.net/QmPEggJSiMtAZCFsRqvRNYtbJFuj34h2a2Abcm6qFbdQfg/nft.jpg?auto=format%2Ccompress&q=70&cs=srgb&h=1200&w=1200&fnd_key=v1"
     },
     {
         id: 8,
-        name: "Success Kid",
-        category: "classic",
-        year: 2007,
-        description: "O punho cerrado de vitória de um bebê na praia virou símbolo de conquistas.",
-        imageUrl: "https://via.placeholder.com/400x300/FDCB6E/FFFFFF?text=Success+Kid",
-        popularity: 85
+        name: "Grumpy Cat",
+        year: 2012,
+        imageUrl: "https://ichef.bbci.co.uk/ace/standard/1024/cpsprodpb/26AC/production/_107000990_grumpycat5.jpg"
     },
     {
         id: 9,
-        name: "Expanding Brain",
-        category: "modern",
-        year: 2017,
-        description: "Quatro níveis de iluminação mental para demonstrar evolução de ideias.",
-        imageUrl: "https://via.placeholder.com/400x300/E17055/FFFFFF?text=Expanding+Brain",
-        popularity: 88
+        name: "Doge",
+        year: 2013,
+        imageUrl: "https://istoedinheiro.com.br/wp-content/uploads/sites/17/2024/05/kabosu-doge.jpg"
     },
-    {
-        id: 10,
-        name: "Surprised Pikachu",
-        category: "modern",
-        year: 2018,
-        description: "A expressão chocada do Pokémon mais famoso do mundo.",
-        imageUrl: "https://via.placeholder.com/400x300/FFCB77/FFFFFF?text=Surprised+Pikachu",
-        popularity: 90
-    },
-    {
-        id: 11,
-        name: "Hide the Pain Harold",
-        category: "viral",
-        year: 2011,
-        description: "András Arató se tornou o rosto do sofrimento disfarçado com um sorriso.",
-        imageUrl: "https://via.placeholder.com/400x300/FF7675/FFFFFF?text=Hide+Pain+Harold",
-        popularity: 86
-    },
-    {
-        id: 12,
-        name: "Galaxy Brain",
-        category: "modern",
-        year: 2017,
-        description: "Quando suas ideias transcendem a realidade conhecida.",
-        imageUrl: "https://via.placeholder.com/400x300/74B9FF/FFFFFF?text=Galaxy+Brain",
-        popularity: 83
-    },
-    {
-        id: 13,
-        name: "Nazaré Confusa",
-        category: "brasileiro",
-        year: 2020,
-        description: "A expressão confusa da Nazaré Tedesco de Senhora do Destino virou símbolo universal de confusão.",
-        imageUrl: "https://via.placeholder.com/400x300/FF6B35/FFFFFF?text=Nazaré+Confusa",
-        popularity: 96
-    },
-    {
-        id: 14,
-        name: "Gretchen Shoqued",
-        category: "brasileiro",
-        year: 2019,
-        description: "A cara de surpresa da Gretchen que conquistou o Brasil e se tornou meme internacional.",
-        imageUrl: "https://via.placeholder.com/400x300/A8E6CF/FFFFFF?text=Gretchen+Shocked",
-        popularity: 89
-    },
-    {
-        id: 15,
-        name: "Faustão Errou Rude",
-        category: "brasileiro",
-        year: 2018,
-        description: "O clássico 'Errou rude!' do Faustão que virou expressão de erro épico no Brasil.",
-        imageUrl: "https://via.placeholder.com/400x300/FFD93D/FFFFFF?text=Faustão+Errou",
-        popularity: 92
-    },
-    {
-        id: 16,
-        name: "Stonks Brasileiro",
-        category: "brasileiro",
-        year: 2021,
-        description: "A versão brasileira do meme Stonks, representando os investimentos tupiniquins.",
-        imageUrl: "https://via.placeholder.com/400x300/6BCF7F/FFFFFF?text=Stonks+BR",
-        popularity: 85
-    },
-    {
-        id: 17,
-        name: "Edir Macedo Ríspido",
-        category: "brasileiro",
-        year: 2020,
-        description: "A expressão séria e determinada que virou meme para situações de confronto.",
-        imageUrl: "https://via.placeholder.com/400x300/4D4D4D/FFFFFF?text=Edir+Macedo",
-        popularity: 81
-    },
-    {
-        id: 18,
-        name: "Jair Messias",
-        category: "brasileiro",
-        year: 2019,
-        description: "Memes políticos que dominaram as redes sociais brasileiras durante anos.",
-        imageUrl: "https://via.placeholder.com/400x300/B4A7D6/FFFFFF?text=Jair+Messias",
-        popularity: 88
-    },
-    {
-        id: 19,
-        name: "Galvão Bueno",
-        category: "brasileiro",
-        year: 2014,
-        description: "As frases épicas do narrador mais famoso do Brasil que viraram memes eternos.",
-        imageUrl: "https://via.placeholder.com/400x300/FF8B94/FFFFFF?text=Galvão+Bueno",
-        popularity: 90
-    },
-    {
-        id: 20,
-        name: "Carreta Furacão",
-        category: "brasileiro",
-        year: 2017,
-        description: "O funk que virou fenômeno e gerou milhares de memes e remixes na internet.",
-        imageUrl: "https://via.placeholder.com/400x300/C7CEEA/FFFFFF?text=Carreta+Furacão",
-        popularity: 87
-    },
-    {
-        id: 21,
-        name: "Agostinho Carrara",
-        category: "brasileiro",
-        year: 2016,
-        description: "O personagem de A Grande Família que virou meme com suas expressões únicas.",
-        imageUrl: "https://via.placeholder.com/400x300/FFEAA7/FFFFFF?text=Agostinho",
-        popularity: 84
-    },
-    {
-        id: 22,
-        name: "Dollynho",
-        category: "brasileiro",
-        year: 2015,
-        description: "Seu amiguinho! O refrigerante que conquistou a internet brasileira com seu jingle marcante.",
-        imageUrl: "https://via.placeholder.com/400x300/FF7675/FFFFFF?text=Dollynho",
-        popularity: 91
-    }
 ];
 
-// DOM Elements
+// Elementos do DOM
 let memeGrid;
-let filterButtons;
 let counters;
 
-// Initialize the application
+// Inicializar a aplicação
 document.addEventListener('DOMContentLoaded', function() {
     initializeElements();
+    updateCounterTargets();
     renderMemeGallery();
-    setupFilterButtons();
     setupCounterAnimation();
     setupSmoothScrolling();
 });
 
-// Initialize DOM elements
+// Inicializar elementos do DOM
 function initializeElements() {
     memeGrid = document.getElementById('memeGrid');
-    filterButtons = document.querySelectorAll('.filter-buttons .btn');
     counters = document.querySelectorAll('.counter');
 }
 
-// Render meme gallery
-function renderMemeGallery(filter = 'all') {
+// Atualizar contadores com dados reais
+function updateCounterTargets() {
+    const counterElements = document.querySelectorAll('.counter');
+    
+    if (counterElements.length >= 2) {
+        // Primeiro contador: número real de memes
+        counterElements[0].setAttribute('data-target', memes.length);
+        
+        // Segundo contador: anos de história (calculado dinamicamente)
+        const years = memes.map(meme => meme.year);
+        const minYear = Math.min(...years);
+        const maxYear = Math.max(...years);
+        const yearRange = maxYear - minYear + 1;
+        counterElements[1].setAttribute('data-target', yearRange);
+    }
+}
+
+// Renderizar galeria de memes
+function renderMemeGallery() {
     if (!memeGrid) return;
     
     memeGrid.innerHTML = '';
     
-    const filteredMemes = filter === 'all' ? memes : memes.filter(meme => meme.category === filter);
-    
-    filteredMemes.forEach((meme, index) => {
+    memes.forEach((meme, index) => {
         const memeCard = createMemeCard(meme, index);
         memeGrid.appendChild(memeCard);
     });
     
-    // Animate cards entrance
+    // Animar entrada dos cards
     setTimeout(() => {
         const cards = memeGrid.querySelectorAll('.meme-card');
         cards.forEach((card, index) => {
@@ -248,7 +117,7 @@ function renderMemeGallery(filter = 'all') {
     }, 50);
 }
 
-// Create individual meme card
+// Criar card individual do meme
 function createMemeCard(meme, index) {
     const col = document.createElement('div');
     col.className = 'col-lg-4 col-md-6 mb-4';
@@ -263,7 +132,6 @@ function createMemeCard(meme, index) {
         <div class="position-relative overflow-hidden">
             <img src="${meme.imageUrl}" class="card-img-top meme-image" alt="${meme.name}">
             <div class="meme-overlay">
-                <i class="fas fa-eye fa-2x"></i>
             </div>
             <div class="position-absolute top-0 end-0 p-2">
                 <span class="badge bg-primary">${meme.year}</span>
@@ -271,11 +139,10 @@ function createMemeCard(meme, index) {
         </div>
         <div class="card-body">
             <h5 class="card-title fw-bold">${meme.name}</h5>
-            <p class="card-text text-muted">${meme.description}</p>
             <div class="d-flex justify-content-between align-items-center">
                 <small class="text-muted">
-                    <i class="fas fa-fire text-danger me-1"></i>
-                    ${meme.popularity}% Popular
+                    <i class="fas fa-calendar text-primary me-1"></i>
+                    ${meme.year}
                 </small>
                 <div class="btn-group" role="group">
                     <button type="button" class="btn btn-outline-primary btn-sm" onclick="likeMeme(${meme.id})">
@@ -289,33 +156,14 @@ function createMemeCard(meme, index) {
         </div>
     `;
     
-    // Add click event for modal (if you want to implement it)
+    // Adicionar evento de clique para modal (se você quiser implementar)
     card.addEventListener('click', () => showMemeModal(meme));
     
     col.appendChild(card);
     return col;
 }
 
-// Setup filter buttons
-function setupFilterButtons() {
-    if (!filterButtons) return;
-    
-    filterButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            // Remove active class from all buttons
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            
-            // Add active class to clicked button
-            this.classList.add('active');
-            
-            // Get filter value and render gallery
-            const filter = this.getAttribute('data-filter');
-            renderMemeGallery(filter);
-        });
-    });
-}
-
-// Setup counter animation
+// Configurar animação dos contadores
 function setupCounterAnimation() {
     const observerOptions = {
         threshold: 0.5,
@@ -336,7 +184,7 @@ function setupCounterAnimation() {
     });
 }
 
-// Animate counter
+// Animar contador
 function animateCounter(counter) {
     const target = parseInt(counter.getAttribute('data-target'));
     const increment = target / 100;
@@ -353,7 +201,7 @@ function animateCounter(counter) {
     }, 20);
 }
 
-// Setup smooth scrolling
+// Configurar rolagem suave
 function setupSmoothScrolling() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
@@ -369,7 +217,7 @@ function setupSmoothScrolling() {
     });
 }
 
-// Scroll to section function
+// Função para rolar até seção
 function scrollToSection(sectionId) {
     const section = document.getElementById(sectionId);
     if (section) {
@@ -380,15 +228,15 @@ function scrollToSection(sectionId) {
     }
 }
 
-// Random meme function
+// Função de meme aleatório
 function randomMeme() {
     const randomIndex = Math.floor(Math.random() * memes.length);
     const randomMeme = memes[randomIndex];
     
-    // Show a toast with random meme info
-    showToast(`Meme Aleatório: ${randomMeme.name}`, `${randomMeme.description} (${randomMeme.year})`, 'info');
+    // Mostrar toast com informações do meme aleatório
+    showToast(`Meme Aleatório: ${randomMeme.name}`, `Ano: ${randomMeme.year}`, 'info');
     
-    // Scroll to gallery and highlight the meme
+    // Rolar até galeria e destacar o meme
     setTimeout(() => {
         scrollToSection('gallery');
         highlightMeme(randomMeme.id);
@@ -397,13 +245,13 @@ function randomMeme() {
 
 
 
-// Like meme function
+// Função de curtir meme
 function likeMeme(memeId) {
     const meme = memes.find(m => m.id === memeId);
     if (meme) {
         showToast('❤️ Curtido!', `Você curtiu o meme "${meme.name}"!`, 'success');
         
-        // Add some visual feedback
+        // Adicionar feedback visual
         const heartBtn = event.target.closest('button');
         heartBtn.classList.add('text-danger');
         heartBtn.innerHTML = '<i class="fas fa-heart"></i>';
@@ -414,7 +262,7 @@ function likeMeme(memeId) {
     }
 }
 
-// Share individual meme card
+// Compartilhar card individual do meme
 function shareMemeCard(memeId) {
     const meme = memes.find(m => m.id === memeId);
     if (meme) {
@@ -422,37 +270,37 @@ function shareMemeCard(memeId) {
     }
 }
 
-// Show meme modal (basic implementation)
+// Mostrar modal do meme (implementação básica)
 function showMemeModal(meme) {
-    // You could implement a modal here for detailed view
-    console.log('Showing modal for:', meme);
+    // Você pode implementar um modal aqui para visualização detalhada
+    console.log('Mostrando modal para:', meme);
 }
 
-// Highlight specific meme
+// Destacar meme específico
 function highlightMeme(memeId) {
-    // This could highlight a specific meme card
-    console.log('Highlighting meme:', memeId);
+    // Isso pode destacar um card específico do meme
+    console.log('Destacando meme:', memeId);
 }
 
-// Utility Functions
+// Funções Utilitárias
 
-// Show toast notification
+// Mostrar notificação toast
 function showToast(title, message, type = 'info') {
     const toastContainer = getOrCreateToastContainer();
     const toast = createToast(title, message, type);
     toastContainer.appendChild(toast);
     
-    // Show toast with Bootstrap
+    // Mostrar toast com Bootstrap
     const bsToast = new bootstrap.Toast(toast);
     bsToast.show();
     
-    // Remove toast after it's hidden
+    // Remover toast após ser ocultado
     toast.addEventListener('hidden.bs.toast', () => {
         toast.remove();
     });
 }
 
-// Get or create toast container
+// Obter ou criar container de toast
 function getOrCreateToastContainer() {
     let container = document.getElementById('toast-container');
     if (!container) {
@@ -465,7 +313,7 @@ function getOrCreateToastContainer() {
     return container;
 }
 
-// Create toast element
+// Criar elemento toast
 function createToast(title, message, type) {
     const toast = document.createElement('div');
     toast.className = 'toast';
@@ -491,12 +339,12 @@ function createToast(title, message, type) {
     return toast;
 }
 
-// Copy to clipboard
+// Copiar para área de transferência
 function copyToClipboard(text) {
     if (navigator.clipboard) {
         navigator.clipboard.writeText(text);
     } else {
-        // Fallback for older browsers
+        // Fallback para navegadores antigos
         const textArea = document.createElement('textarea');
         textArea.value = text;
         document.body.appendChild(textArea);
@@ -506,92 +354,7 @@ function copyToClipboard(text) {
     }
 }
 
-// Create confetti effect
-function createConfetti() {
-    const colors = ['#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFEAA7', '#DDA0DD', '#98D8C8'];
-    const confettiCount = 50;
-    
-    for (let i = 0; i < confettiCount; i++) {
-        createConfettiPiece(colors[Math.floor(Math.random() * colors.length)]);
-    }
-}
-
-// Create individual confetti piece
-function createConfettiPiece(color) {
-    const confetti = document.createElement('div');
-    confetti.style.position = 'fixed';
-    confetti.style.width = '10px';
-    confetti.style.height = '10px';
-    confetti.style.backgroundColor = color;
-    confetti.style.left = Math.random() * 100 + 'vw';
-    confetti.style.top = '-10px';
-    confetti.style.zIndex = '9999';
-    confetti.style.pointerEvents = 'none';
-    confetti.style.transform = 'rotate(' + (Math.random() * 360) + 'deg)';
-    
-    document.body.appendChild(confetti);
-    
-    // Animate confetti falling
-    const animation = confetti.animate([
-        { transform: 'translateY(0) rotate(0deg)', opacity: 1 },
-        { transform: 'translateY(100vh) rotate(720deg)', opacity: 0 }
-    ], {
-        duration: 3000 + Math.random() * 2000,
-        easing: 'cubic-bezier(0.5, 0, 0.5, 1)'
-    });
-    
-    animation.onfinish = () => confetti.remove();
-}
-
-// Easter egg: Konami code
-let konamiCode = [];
-const konamiSequence = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'KeyB', 'KeyA'];
-
-document.addEventListener('keydown', function(e) {
-    konamiCode.push(e.code);
-    
-    if (konamiCode.length > konamiSequence.length) {
-        konamiCode.shift();
-    }
-    
-    if (konamiCode.join(',') === konamiSequence.join(',')) {
-        activateEasterEgg();
-        konamiCode = [];
-    }
-});
-
-// Activate easter egg
-function activateEasterEgg() {
-    showToast('🎉 Easter Egg!', 'Você descobriu o código secreto! Todos os memes são agora ÉPICOS!', 'success');
-    
-    // Add rainbow effect to all meme cards
-    const memeCards = document.querySelectorAll('.meme-card');
-    memeCards.forEach(card => {
-        card.style.animation = 'rainbow 2s infinite';
-        card.style.border = '3px solid transparent';
-        card.style.backgroundImage = 'linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet, red)';
-        card.style.backgroundSize = '400%';
-        card.style.backgroundClip = 'padding-box';
-    });
-    
-    // Add CSS for rainbow animation
-    if (!document.getElementById('rainbow-styles')) {
-        const style = document.createElement('style');
-        style.id = 'rainbow-styles';
-        style.textContent = `
-            @keyframes rainbow {
-                0% { background-position: 0% 50%; }
-                50% { background-position: 100% 50%; }
-                100% { background-position: 0% 50%; }
-            }
-        `;
-        document.head.appendChild(style);
-    }
-    
-    createConfetti();
-}
-
-// Performance optimization: Lazy loading for images
+// Otimização de performance: Carregamento lazy para imagens
 function setupLazyLoading() {
     const images = document.querySelectorAll('img[data-src]');
     const imageObserver = new IntersectionObserver((entries) => {
@@ -608,11 +371,129 @@ function setupLazyLoading() {
     images.forEach(img => imageObserver.observe(img));
 }
 
-// Initialize lazy loading when DOM is ready
+// Inicializar carregamento lazy quando DOM estiver pronto
 document.addEventListener('DOMContentLoaded', setupLazyLoading);
 
-// Export functions for global use
+// Exportar funções para uso global
 window.scrollToSection = scrollToSection;
 window.randomMeme = randomMeme;
 window.likeMeme = likeMeme;
 window.shareMemeCard = shareMemeCard;
+
+// ============================================================================
+// HALL DA FAMA - Funcionalidades específicas
+// ============================================================================
+
+// Dados do pódio para o Hall da Fama
+const podiumData = [
+    {
+        position: 1,
+        id: "trollface",
+        name: "Trollface",
+        badge: "👑 LENDA ETERNA",
+        imageUrl: "https://upload.wikimedia.org/wikipedia/en/9/9a/Trollface_non-free.png"
+    },
+    {
+        position: 2,
+        id: "rage-guy",
+        name: "FUUUU (Rage Guy)",
+        badge: "🥈 PIONEIRO",
+        imageUrl: "https://i.kym-cdn.com/entries/icons/original/000/000/063/Rage.jpg"
+    },
+    {
+        position: 3,
+        id: "rickroll",
+        name: "Rickroll",
+        badge: "🥉 IMORTAL",
+        imageUrl: "https://i.kym-cdn.com/entries/icons/original/000/000/305/Rickroll.jpg"
+    }
+];
+
+// Detectar se estamos na página do Hall da Fama
+function isHallOfFamePage() {
+    return window.location.pathname.includes('hall-da-fama') || 
+           document.title.includes('Hall da Fama');
+}
+
+// Inicializar funcionalidades específicas do Hall da Fama
+function initializeHallOfFame() {
+    if (!isHallOfFamePage()) return;
+    
+    console.log('🏆 Hall da Fama carregado!');
+    
+    // Adicionar efeitos especiais aos cards
+    const podiumCards = document.querySelectorAll('.podium-card');
+    podiumCards.forEach((card, index) => {
+        // Delay na animação de entrada
+        setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+        }, index * 200);
+    });
+    
+    setupHallAnimations();
+    setupHallInteractions();
+}
+
+// Configurar animações do Hall da Fama
+function setupHallAnimations() {
+    // Animação simples do troféu principal
+    const trophyIcon = document.querySelector('.trophy-icon');
+    if (trophyIcon) {
+        trophyIcon.addEventListener('mouseover', function() {
+            this.style.transform = 'scale(1.1)';
+        });
+        
+        trophyIcon.addEventListener('mouseout', function() {
+            this.style.transform = 'scale(1)';
+        });
+    }
+}
+
+// Configurar interações do Hall da Fama
+function setupHallInteractions() {
+    const podiumCards = document.querySelectorAll('.podium-card');
+    
+    podiumCards.forEach((card, index) => {
+        // Efeito de clique para mostrar detalhes
+        card.addEventListener('click', function() {
+            showMemeDetails(podiumData[index]);
+        });
+    });
+}
+
+// Mostrar detalhes do meme (modal simples)
+function showMemeDetails(memeData) {
+    const message = `
+🏆 ${memeData.name}
+📍 Posição: ${memeData.position}°
+🏅 ${memeData.badge}
+
+Este é um dos memes mais lendários da história da internet!
+    `;
+    
+    alert(message);
+}
+
+// Inicialização principal
+document.addEventListener('DOMContentLoaded', function() {
+    // Funcionalidades principais
+    initializeElements();
+    updateCounterTargets();
+    
+    // Funcionalidades específicas baseadas na página
+    if (isHallOfFamePage()) {
+        initializeHallOfFame();
+    } else {
+        // Página principal do museu
+        renderMemeGallery();
+        setupCounterAnimation();
+        setupSmoothScrolling();
+    }
+});
+
+// Função utilitária para logging
+function logEvent(event, data = {}) {
+    const page = isHallOfFamePage() ? 'Hall da Fama' : 'Museu Principal';
+    console.log(`🎭 ${page} - ${event}:`, data);
+}
